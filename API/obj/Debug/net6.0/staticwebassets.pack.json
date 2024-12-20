@@ -1,0 +1,197 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/asset-manifest.json",
+      "PackagePath": "staticwebassets/asset-manifest.json"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/hero1.jpg",
+      "PackagePath": "staticwebassets/images/hero1.jpg"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/hero2.jpg",
+      "PackagePath": "staticwebassets/images/hero2.jpg"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/hero3.jpg",
+      "PackagePath": "staticwebassets/images/hero3.jpg"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/placeholder.png",
+      "PackagePath": "staticwebassets/images/placeholder.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/boot-ang1.png",
+      "PackagePath": "staticwebassets/images/products/boot-ang1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/boot-ang2.png",
+      "PackagePath": "staticwebassets/images/products/boot-ang2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/boot-core1.png",
+      "PackagePath": "staticwebassets/images/products/boot-core1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/boot-core2.png",
+      "PackagePath": "staticwebassets/images/products/boot-core2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/boot-redis1.png",
+      "PackagePath": "staticwebassets/images/products/boot-redis1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/glove-code1.png",
+      "PackagePath": "staticwebassets/images/products/glove-code1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/glove-code2.png",
+      "PackagePath": "staticwebassets/images/products/glove-code2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/glove-react1.png",
+      "PackagePath": "staticwebassets/images/products/glove-react1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/glove-react2.png",
+      "PackagePath": "staticwebassets/images/products/glove-react2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/hat-core1.png",
+      "PackagePath": "staticwebassets/images/products/hat-core1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/hat-react1.png",
+      "PackagePath": "staticwebassets/images/products/hat-react1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/hat-react2.png",
+      "PackagePath": "staticwebassets/images/products/hat-react2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/sb-ang1.png",
+      "PackagePath": "staticwebassets/images/products/sb-ang1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/sb-ang2.png",
+      "PackagePath": "staticwebassets/images/products/sb-ang2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/sb-core1.png",
+      "PackagePath": "staticwebassets/images/products/sb-core1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/sb-core2.png",
+      "PackagePath": "staticwebassets/images/products/sb-core2.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/sb-react1.png",
+      "PackagePath": "staticwebassets/images/products/sb-react1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/products/sb-ts1.png",
+      "PackagePath": "staticwebassets/images/products/sb-ts1.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/profiles/Thumbnail.png",
+      "PackagePath": "staticwebassets/images/profiles/Thumbnail.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/profiles/billGates.jpg",
+      "PackagePath": "staticwebassets/images/profiles/billGates.jpg"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/images/profiles/mark.jpg",
+      "PackagePath": "staticwebassets/images/profiles/mark.jpg"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/logo192.png",
+      "PackagePath": "staticwebassets/logo192.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/logo512.png",
+      "PackagePath": "staticwebassets/logo512.png"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/manifest.json",
+      "PackagePath": "staticwebassets/manifest.json"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/robots.txt",
+      "PackagePath": "staticwebassets/robots.txt"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/css/main.4bad164b.css",
+      "PackagePath": "staticwebassets/static/css/main.4bad164b.css"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/css/main.4bad164b.css.map",
+      "PackagePath": "staticwebassets/static/css/main.4bad164b.css.map"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/js/496.b1a37ed9.chunk.js",
+      "PackagePath": "staticwebassets/static/js/496.b1a37ed9.chunk.js"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/js/496.b1a37ed9.chunk.js.map",
+      "PackagePath": "staticwebassets/static/js/496.b1a37ed9.chunk.js.map"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/js/main.4ce524a7.js",
+      "PackagePath": "staticwebassets/static/js/main.4ce524a7.js"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/js/main.4ce524a7.js.LICENSE.txt",
+      "PackagePath": "staticwebassets/static/js/main.4ce524a7.js.LICENSE.txt"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/js/main.4ce524a7.js.map",
+      "PackagePath": "staticwebassets/static/js/main.4ce524a7.js.map"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/media/slick.2630a3e3eab21c607e21.svg",
+      "PackagePath": "staticwebassets/static/media/slick.2630a3e3eab21c607e21.svg"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/media/slick.295183786cd8a1389865.woff",
+      "PackagePath": "staticwebassets/static/media/slick.295183786cd8a1389865.woff"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+      "PackagePath": "staticwebassets/static/media/slick.a4e97f5a2a64f0ab1323.eot"
+    },
+    {
+      "Id": "/Users/himanshu/MyStore/API/wwwroot/static/media/slick.c94f7671dcc99dce43e2.ttf",
+      "PackagePath": "staticwebassets/static/media/slick.c94f7671dcc99dce43e2.ttf"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
