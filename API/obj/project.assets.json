@@ -5663,19 +5663,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/himanshu/.nuget/packages/": {}
+    "C:\\Users\\RWC-Himanshu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/himanshu/MyStore/API/API.csproj",
+      "projectUniqueName": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/himanshu/MyStore/API/API.csproj",
-      "packagesPath": "/Users/himanshu/.nuget/packages/",
-      "outputPath": "/Users/himanshu/MyStore/API/obj/",
+      "projectPath": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\RWC-Himanshu\\.nuget\\packages\\",
+      "outputPath": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/himanshu/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\RWC-Himanshu\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -5764,11 +5764,15 @@
             "version": "[6.0.32, 6.0.32]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "name": "Microsoft.NETCore.App.Host.win-x64",
             "version": "[6.0.32, 6.0.32]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.32, 6.0.32]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[6.0.32, 6.0.32]"
           }
         ],
@@ -5780,7 +5784,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   },
