@@ -53,11 +53,17 @@ jobs:
         - name: Run Dotnet Unit Tests (optimization step)
           run: dotnet test --configuration Release --no-build --verbosity normal
 
-        # task - 6 | "publish" dotnet application (prepare-for-deployment)
+        # task - 6 | install "web-deploy" into the workflow-runner
+        - name: Install Web Deploy
+          run: |
+           choco install webdeploy -y
+           refreshenv
+
+        # task - 7 | "publish" dotnet application (prepare-for-deployment)
         - name: Publish Application
           run: dotnet publish API/API.csproj -c Release -o ./publish
 
-        # task - 7 | "deploy" application to "MonsterAsp.NET" 
+        # task - 8 | "deploy" application to "MonsterAsp.NET" 
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
