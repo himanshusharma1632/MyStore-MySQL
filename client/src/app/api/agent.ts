@@ -5,7 +5,6 @@ import { URLSearchParams } from "url";
 import { PaginatedResponse } from "../models/pagination";
 import { store } from "../REDUX/configureStore";
 import { router } from "../../Routes/Routes";
-import { Product } from "../models/product";
 
 const sleep =()=> new Promise(resolve => setTimeout(resolve, 500));
 

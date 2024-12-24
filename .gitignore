@@ -482,4 +482,9 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# ignore (production-environment configuration secret(s))
 API/appsettings.json
+
+# ignore (publish-settings by MonsterAsp.NET cloud-web hosting platform)
+himworld.runasp.net-WebDeploy.publishSettings
