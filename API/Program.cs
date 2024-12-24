@@ -69,7 +69,7 @@ builder.Services.AddDbContext<StoreContext>(opt => {
   }
   
   // condition-check |5.3| "application" environment is "production & staging"
-  else if (builder.Environment.IsProduction() | builder.Environment.IsStaging()) {
+  else {
     
     // |5.3.A| "mySQL" connection-string (production & staging) | (generated at runtime by - MonsterAsp.NET.com)
     string connectionString = Environment.GetEnvironmentVariable("MY_PROD_SQL_DATABASE_CONNSTRING");
