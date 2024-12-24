@@ -2,7 +2,7 @@ import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../app/layout/App";
 import Register from "../features/account/Register/Register";
 import Login from "../features/account/Login/Login";
-import Catalog from "../features/catalog/Catalog";
+import Catalog from "../features/catalog/catalog";
 import AboutPage from "../features/about/AboutPage";
 import ContactPage from "../features/Contact/ContactPage";
 import CollectionPage from "../features/Collections/CollectionPage";

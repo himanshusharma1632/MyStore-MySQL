@@ -1,15 +1,12 @@
-using System.Threading.Tasks;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 
 namespace API.Services
 {
     public class ImageService
     {
         private readonly Cloudinary _cloudinary;
-        public ImageService(IConfiguration configuration)
+        public ImageService (IConfiguration configuration)
         {
          var acc = new Account(
           configuration["Cloudinary:CloudName"],
