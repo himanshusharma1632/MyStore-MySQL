@@ -1,0 +1,67 @@
+name: Deploy Application #name of the "workflow" on "github"
+
+on: 
+    push: 
+        branches:
+           - "main" # triggers this "deploy-app.yml" script on "push" to "branch - main"
+    workflow_dispatch: 
+
+jobs:
+
+  # job-title (JOB - 1)
+  release:
+
+    # OS/Platform name (for running)
+    runs-on: ubuntu-latest
+    
+    # job (sub-task(s))
+    steps:
+
+        # COMMAND CONCEPT(s)
+        # uses : "this command is required when the actual process-command supplied by the github-actions only, and is not our custom one."
+        # run : "this command is used when we supply our custom process-command to this workflow-runner" 
+
+        # -------------------------------------------------------------------------------------------- #
+    
+        # task - 1 | Checkout the Repository
+        # concept | command "actions/checkout@v4" checks out latest commit on "main" where "deploy-app.yml" is triggered
+        # conecpt | '@v4' is the 'checkout-runner' version utilized. It is 'semantic-version' (i.e v4's latest version from major v4)
+        # concept | after checking out, it keeps the "repository-code" to "workflow-runner" (in this case "ubuntu-latest") 
+
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+        
+        # -------------------------------------------------------------------------------------------- #
+
+        # task - 2 | this "task" set-up the dotnet SDKs to the workflo-runner (i.e. ubuntu-latest herein.)
+        - name: Set-Up Dotnet SDK(s)
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: 8.0.404 # currently installed-working dotnet version
+
+        # -------------------------------------------------------------------------------------------- #
+
+        # task - 3 | "refresh/restore" all "dotnet-dependencies" (in API.csproj)
+        - name: Refresh/Install Dependencies
+          run: dotnet restore # our custom supplied command
+          
+        # task - 4 | "build" the dotnet application
+        - name: Build Application
+          run: dotnet build --configuration Release --no-restore
+
+        # task - 5 | run "unit-test(s)" into the application
+        - name: Run Dotnet Unit Tests (optimization step)
+          run: dotnet test --configuration Release --no-build --verbosity normal
+
+        # task - 6 | "publish" dotnet application (prepare-for-deployment)
+        - name: Publish Application
+          run: dotnet publish -c Release -o ./publish
+
+    # -------------------------------------------------------------------------------------------- #
+    # -------------------------------------------------------------------------------------------- #
+
+         
+
+       
+
+

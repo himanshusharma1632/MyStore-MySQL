@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0jn4pWRgBJxdBXzKTAExcSGvm7S3exxw2LdjYGx1Pro=",
+  "Hash": "yO2bfo0Lm6BYo4Y7Nco3JPVBqGrHDoB0e97NuaVq7WM=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -720,12 +720,12 @@
       "OriginalItemSpec": "wwwroot\\static\\js\\496.b1a37ed9.chunk.js.map"
     },
     {
-      "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\js\\main.4ce524a7.js",
+      "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\js\\main.1a745e29.js",
       "SourceId": "API",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\",
       "BasePath": "_content/API",
-      "RelativePath": "static/js/main.4ce524a7.js",
+      "RelativePath": "static/js/main.1a745e29.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -736,15 +736,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.4ce524a7.js"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.1a745e29.js"
     },
     {
-      "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\js\\main.4ce524a7.js.LICENSE.txt",
+      "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\js\\main.1a745e29.js.LICENSE.txt",
       "SourceId": "API",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\",
       "BasePath": "_content/API",
-      "RelativePath": "static/js/main.4ce524a7.js.LICENSE.txt",
+      "RelativePath": "static/js/main.1a745e29.js.LICENSE.txt",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -755,15 +755,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.4ce524a7.js.LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.1a745e29.js.LICENSE.txt"
     },
     {
-      "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\js\\main.4ce524a7.js.map",
+      "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\js\\main.1a745e29.js.map",
       "SourceId": "API",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\",
       "BasePath": "_content/API",
-      "RelativePath": "static/js/main.4ce524a7.js.map",
+      "RelativePath": "static/js/main.1a745e29.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -774,7 +774,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.4ce524a7.js.map"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.1a745e29.js.map"
     },
     {
       "Identity": "E:\\Code Projects - PERSONAL\\Projects\\PersonalProjects\\HimWorld\\API\\wwwroot\\static\\media\\slick.2630a3e3eab21c607e21.svg",
