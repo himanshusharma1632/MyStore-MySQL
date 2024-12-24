@@ -9,7 +9,7 @@ on:
 jobs:
 
   # job-title (JOB - 1)
-  release:
+  release_deploy:
 
     # OS/Platform name (for running)
     runs-on: ubuntu-latest
@@ -57,32 +57,19 @@ jobs:
         - name: Publish Application
           run: dotnet publish API/API.csproj -c Release -o ./publish
 
-    # -------------------------------------------------------------------------------------------- #
-    # -------------------------------------------------------------------------------------------- #
-  
-  # job-title (JOB - 2)
-  deploy:
-
-    # OS/Platform name (for running)
-    runs-on: ubuntu-latest
-   
-    # job (sub-task(s))
-    steps:
-      
-      # task - 1 | "deploy" application to "MonsterAsp.NET" 
-      # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
-
-      - name: Deploy To MonsterAsp.NET
-        run: |
-          msdeploy.exe -verb:sync ^
-          -source:contentPath=./publish ^
-          -dest:contentPath=$env:MONSTER_ASPNET__SITENAME,computerName=$env:MONSTER_ASPNET__PUBLISH_URL,username=$env:MONSTER_ASPNET__USERNAME,password=$env:MONSTER_ASPNET__PASSWORD ^
-          -enableRule:AppOffline
-        env:
-          MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
-          MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
-          MONSTER_ASPNET__PASSWORD: ${{ secrets.MONSTER_ASPNET__PASSWORD }}
-          MONSTER_ASPNET__SITENAME: ${{ secrets.MONSTER_ASPNET__SITENAME }}
+        # task - 7 | "deploy" application to "MonsterAsp.NET" 
+        # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
+        - name: Deploy To MonsterAsp.NET
+          run: |
+            msdeploy.exe -verb:sync ^
+            -source:contentPath=./publish ^
+            -dest:contentPath=$env:MONSTER_ASPNET__SITENAME,computerName=$env:MONSTER_ASPNET__PUBLISH_URL,username=$env:MONSTER_ASPNET__USERNAME,password=$env:MONSTER_ASPNET__PASSWORD ^
+            -enableRule:AppOffline
+          env:
+            MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
+            MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
+            MONSTER_ASPNET__PASSWORD: ${{ secrets.MONSTER_ASPNET__PASSWORD }}
+            MONSTER_ASPNET__SITENAME: ${{ secrets.MONSTER_ASPNET__SITENAME }}
 
 
 
