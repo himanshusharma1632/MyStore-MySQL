@@ -55,7 +55,7 @@ jobs:
 
         # task - 6 | "publish" dotnet application (prepare-for-deployment)
         - name: Publish Application
-          run: dotnet publish -c Release -o ./publish
+          run: dotnet publish API/API.csproj -c Release -o ./publish
 
     # -------------------------------------------------------------------------------------------- #
     # -------------------------------------------------------------------------------------------- #
