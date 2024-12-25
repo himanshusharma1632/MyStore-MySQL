@@ -88,7 +88,13 @@ jobs:
         - name: Debug Step - View API/publish folder
           run: ls -R API/publish # this command will "look-inside (ls)" of "API/publish" folder (on repository) for its contents
 
-        # task - 10 | "deploy" application to "MonsterAsp.NET" 
+        # task - 10 | debug-step - check "environment-variable" string-interpolation status
+        - name: Debug Step - Check Environment-Variable Status
+          run: echo "$env:secrets.MONSTER_ASPNET__PUBLISH_URL"
+          env: 
+           MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
+
+        # task - 11 | "deploy" application to "MonsterAsp.NET" 
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
