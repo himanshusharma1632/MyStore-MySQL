@@ -86,10 +86,10 @@ jobs:
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
-            msdeploy.exe -verb:sync ^
-            -source:contentPath=./publish ^
-            -dest:contentPath=$env:MONSTER_ASPNET__SITENAME,computerName=$env:MONSTER_ASPNET__PUBLISH_URL,username=$env:MONSTER_ASPNET__USERNAME,password=$env:MONSTER_ASPNET__PASSWORD ^
-            -enableRule:AppOffline
+           "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync ^
+           -source:contentPath=./publish ^
+           -dest:contentPath=$env:MONSTER_ASPNET__SITENAME,computerName=$env:MONSTER_ASPNET__PUBLISH_URL,username=$env:MONSTER_ASPNET__USERNAME,password=$env:MONSTER_ASPNET__PASSWORD ^
+           -enableRule:AppOffline
           env:
             MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
             MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
