@@ -53,17 +53,36 @@ jobs:
         - name: Run Dotnet Unit Tests (optimization step)
           run: dotnet test --configuration Release --no-build --verbosity normal
 
-        # task - 6 | install "web-deploy" into the workflow-runner
+        # task - 6 | check "pending-reboots" present over "github-action(s)"
+        - name: Check Pending Reboot
+          run: |
+           if (Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\RebootPending") {
+           Write-Output "Pending reboot detected. Please reboot the runner."                           
+           exit 1 
+           } else {
+            Write-Output "No pending reboot detected."
+           }
+          
+          shell: pwsh # use the "windows-powershell" to run the above-mentioned commands
+
+        # task - 7 | install "web-deploy" into the workflow-runner
         - name: Install Web Deploy
           run: |
-           choco install webdeploy -y
-           refreshenv
+            if (!(Get-Command msdeploy.exe -ErrorAction SilentlyContinue)) {
+              Write-Output "Web Deploy not found. Installing..."
+              choco install webdeploy -y
+            } else {
+              Write-Output "Web Deploy is already installed."
+            }
+            Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+            refreshenv
+          shell: pwsh # use the "windows-powershell" to run the above-mentioned commands 
 
-        # task - 7 | "publish" dotnet application (prepare-for-deployment)
+        # task - 8 | "publish" dotnet application (prepare-for-deployment)
         - name: Publish Application
           run: dotnet publish API/API.csproj -c Release -o ./publish
 
-        # task - 8 | "deploy" application to "MonsterAsp.NET" 
+        # task - 9 | "deploy" application to "MonsterAsp.NET" 
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
