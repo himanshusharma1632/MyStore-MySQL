@@ -78,13 +78,11 @@ jobs:
             refreshenv
           shell: pwsh # use the "windows-powershell" to run the above-mentioned commands 
 
-        # task - 8 | navigate to "project-root (API)" folder
-        - name: Navigate to API Folder
-          run: cd Himworld/API
+      
 
         # task - 9 | "publish" dotnet application (prepare-for-deployment)
         - name: Publish Application
-          run: dotnet publish API/API.csproj -c Release -o ../publish
+          run: dotnet publish API/API.csproj -c Release -o ./API/publish
 
         # task - 10 | debug - view "list" of all files inside "Himworld" project-root
         - name: Debug Step - View Files List
