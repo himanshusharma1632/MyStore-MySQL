@@ -97,7 +97,7 @@ jobs:
              -dest:contentPath=$env:MONSTER_ASPNET__SITENAME,computerName=$env:MONSTER_ASPNET__PUBLISH_URL,username=$env:MONSTER_ASPNET__USERNAME,password=$env:MONSTER_ASPNET__PASSWORD `
              -enableRule:AppOffline
           env:
-            MONSTER_ASPNET__PUBLISH_URL: "http://${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}"
+            MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
             MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
             MONSTER_ASPNET__PASSWORD: ${{ secrets.MONSTER_ASPNET__PASSWORD }}
             MONSTER_ASPNET__SITENAME: ${{ secrets.MONSTER_ASPNET__SITENAME }}
