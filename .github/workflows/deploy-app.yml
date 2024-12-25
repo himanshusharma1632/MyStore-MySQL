@@ -78,25 +78,24 @@ jobs:
             refreshenv
           shell: pwsh # use the "windows-powershell" to run the above-mentioned commands 
 
-      
-
-        # task - 9 | "publish" dotnet application (prepare-for-deployment)
+        # task - 8 | "publish" dotnet application (prepare-for-deployment)
         - name: Publish Application
           run: dotnet publish API/API.csproj -c Release -o ./API/publish
 
-        # task - 10 | debug - view "list" of all files inside "Himworld" project-root
-        - name: Debug Step - View Files List
-          run: ls -R # this command will "look-inside (ls)" of "Remote folder (on repository)" for its contents
+        # task - 9 | debug-step - view "list" of all files inside "Himworld/API/publish"
+        # concept | this "debug-step" will ensure that the publish folder is indeed created at runtime within "API/publish"
+        # concept | since "./API/publish" would be present during deployment, so MonsterAsp.NET will pick up the content from "./API/publish" folder directly
+        - name: Debug Step - View API/publish folder
+          run: ls -R API/publish # this command will "look-inside (ls)" of "API/publish" folder (on repository) for its contents
 
-        # task - 11 | "deploy" application to "MonsterAsp.NET" 
+        # task - 10 | "deploy" application to "MonsterAsp.NET" 
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
            & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
-             -source:contentPath=./publish `
+             -source:contentPath=./API/publish `
              -dest:contentPath=$env:MONSTER_ASPNET__SITENAME,computerName=$env:MONSTER_ASPNET__PUBLISH_URL,username=$env:MONSTER_ASPNET__USERNAME,password=$env:MONSTER_ASPNET__PASSWORD `
              -enableRule:AppOffline
-             -verbose
           env:
             MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
             MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
