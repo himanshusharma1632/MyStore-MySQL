@@ -94,7 +94,7 @@ jobs:
           run: |
            & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
              -source:contentPath=$PWD/API/publish `
-             -dest:contentPath=${{ secrets.MONSTER_ASPNET__SITENAME }},computerName="${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}/MSDEPLOYAGENTSERVICE",username=${{ secrets.MONSTER_ASPNET__USERNAME }},password=${{ secrets.MONSTER_ASPNET__PASSWORD }} `
+             -dest:contentPath=$env:secrets.MONSTER_ASPNET__SITENAME,computerName=$env:secrets.MONSTER_ASPNET__PUBLISH_URL,username=$env:secrets.MONSTER_ASPNET__USERNAME,password=$env:secrets.MONSTER_ASPNET__PASSWORD `
              -enableRule:AppOffline
           env:
            MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
