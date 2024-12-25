@@ -96,6 +96,11 @@ jobs:
              -source:contentPath=$PWD/API/publish `
              -dest:contentPath=${{ secrets.MONSTER_ASPNET__SITENAME }},computerName="${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}/MSDEPLOYAGENTSERVICE",username=${{ secrets.MONSTER_ASPNET__USERNAME }},password=${{ secrets.MONSTER_ASPNET__PASSWORD }} `
              -enableRule:AppOffline
+          env:
+           MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
+           MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
+           MONSTER_ASPNET__PASSWORD: ${{ secrets.MONSTER_ASPNET__PASSWORD }}
+           MONSTER_ASPNET__SITENAME: ${{ secrets.MONSTER_ASPNET__SITENAME }}
 
 
 
