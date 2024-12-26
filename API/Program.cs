@@ -72,10 +72,11 @@ builder.Services.AddDbContext<StoreContext>(opt => {
   else {
     
     // |5.3.A| "mySQL" connection-string (production & staging) | (generated at runtime by - MonsterAsp.NET.com)
+    string appSettingsConnString = builder.Configuration.GetConnectionString("MyProdSQLDatabaseConnection");
     string connectionString = Environment.GetEnvironmentVariable("MY_PROD_SQL_DATABASE_CONNSTRING");
 
     // |5.3.B| "mySQL" connection-configuration
-    opt.UseMySql(connectionString, serverVersion);
+    opt.UseMySql(connectionString ?? appSettingsConnString, serverVersion);
   };
 });
 
