@@ -99,8 +99,6 @@ jobs:
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
-           Write-Output "Pinging the remote-url for its presence"
-           ping "${{secrets.MONSTER_ASPNET__PUBLISH_URL}}".Trim('/')
            & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
              -source:contentPath=$PWD/API/publish `
              Write-Output "Starting the deployment to - "${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172/msdeploy.axd?site=${{secrets.MONSTER_ASPNET__SITENAME}}"
