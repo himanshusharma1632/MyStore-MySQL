@@ -52,7 +52,7 @@ if(unknownBasket != null){
 
 return new UserDTO {
 Email = user.Email,
-Token = await _tokenService.GenerateToken(user),
+Token = await _tokenService.GenerateToken(user, _fileEnv),
 PhoneNumber = user.PhoneNumber,
 userName = user.UserName,
 Basket = unknownBasket != null ? unknownBasket.BasketDTOGetter() : userBasket?.BasketDTOGetter()
@@ -91,7 +91,7 @@ var userBasket = await BasketGetter(User.Identity.Name);
 
 return new UserDTO {
 Email = user.Email,
-Token = await _tokenService.GenerateToken(user),
+Token = await _tokenService.GenerateToken(user, _fileEnv),
 userName = user.UserName,
 PhoneNumber = user.PhoneNumber,
 Basket = userBasket?.BasketDTOGetter()
