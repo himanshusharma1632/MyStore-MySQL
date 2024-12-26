@@ -140,7 +140,10 @@ application.UseRouting();
 
 // configuration |6| "CORS" configuration
 application.UseCors(opt => {
-  opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:3000");      
+  opt.AllowAnyHeader()
+     .AllowAnyMethod()
+     .AllowCredentials()
+     .WithOrigins("http://localhost:3000");      
 });
 
 // configuration |7| "authentication" configuration
