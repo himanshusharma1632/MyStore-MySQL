@@ -99,32 +99,19 @@ jobs:
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
-            $deployUrl = "${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172/msdeploy.axd?site=${{secrets.MONSTER_ASPNET__SITENAME}}"
-            Write-Output "Starting deployment to: $deployUrl"
-            & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
-              -source:contentPath="$PWD\API\publish" `
-              -dest:contentPath="${{secrets.MONSTER_ASPNET__SITENAME}}",`
-                   computerName="$deployUrl",`
-                   username="${{secrets.MONSTER_ASPNET__USERNAME}}",`
-                   password="${{secrets.MONSTER_ASPNET__PASSWORD}}" `
-              -enableRule:AppOffline `
-              -allowUntrusted `
-              -enableRule:DoNotDeleteRule `
-              -retryAttempts:5 `
-              -retryInterval:5000 `
-              -verbose
-          shell: pwsh
+           & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
+             -source:contentPath=$PWD/API/publish `
+             -dest:contentPath=${{secrets.MONSTER_ASPNET__SITENAME}},computerName=${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172//msdeploy.axd?site=${{secrets.MONSTER_ASPNET__SITENAME}},username=${{secrets.MONSTER_ASPNET__USERNAME}},password=${{secrets.MONSTER_ASPNET__PASSWORD}} `
+             -enableRule:AppOffline `
+             -enableRule:DoNotDeleteRule `
+             -allowUntrusted `
+             -retryAttempts:5 `
+             -retryInterval:5000
           env:
            MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
            MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
            MONSTER_ASPNET__PASSWORD: ${{ secrets.MONSTER_ASPNET__PASSWORD }}
            MONSTER_ASPNET__SITENAME: ${{ secrets.MONSTER_ASPNET__SITENAME }}
-
-
-
-    
-    
-
 
 
          

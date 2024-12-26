@@ -1,0 +1,11 @@
+- name: Deploy To MonsterAsp.NET
+          run: |
+           & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
+             -source:contentPath=$PWD/API/publish `
+             -dest:contentPath=${{secrets.MONSTER_ASPNET__SITENAME}},computerName=${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172/MSDEPLOYAGENTSERVICE,username=${{secrets.MONSTER_ASPNET__USERNAME}},password=${{secrets.MONSTER_ASPNET__PASSWORD}} `
+             -enableRule:AppOffline
+          env:
+           MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
+           MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
+           MONSTER_ASPNET__PASSWORD: ${{ secrets.MONSTER_ASPNET__PASSWORD }}
+           MONSTER_ASPNET__SITENAME: ${{ secrets.MONSTER_ASPNET__SITENAME }}
