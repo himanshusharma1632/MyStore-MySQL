@@ -111,7 +111,6 @@ jobs:
              -disableLink:AppPoolExtension `
              -disableLink:ContentExtension `
              -disableLink:CertificateExtension
-          shell: pwsh
           env:
            MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
            MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
