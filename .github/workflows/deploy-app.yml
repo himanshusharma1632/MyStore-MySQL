@@ -99,14 +99,21 @@ jobs:
         # concept | use "publishSettings" file by "MonsterAsp.NET" to deploy directly to "cloud-hosting" using "WebDeploy Access" feature by "MonsterAsp.NET"
         - name: Deploy To MonsterAsp.NET
           run: |
+           Write-Output "Pinging the remote-url for its presence"
+           ping "${{secrets.MONSTER_ASPNET__PUBLISH_URL}}".Trim('/')
            & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync `
              -source:contentPath=$PWD/API/publish `
-             -dest:contentPath=${{secrets.MONSTER_ASPNET__SITENAME}},computerName=${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172//msdeploy.axd?site=${{secrets.MONSTER_ASPNET__SITENAME}},username=${{secrets.MONSTER_ASPNET__USERNAME}},password=${{secrets.MONSTER_ASPNET__PASSWORD}} `
+             Write-Output "Starting the deployment to - "${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172/msdeploy.axd?site=${{secrets.MONSTER_ASPNET__SITENAME}}"
+             -dest:contentPath=${{secrets.MONSTER_ASPNET__SITENAME}},computerName=${{secrets.MONSTER_ASPNET__PUBLISH_URL}}:8172/msdeploy.axd?site=${{secrets.MONSTER_ASPNET__SITENAME}},username=${{secrets.MONSTER_ASPNET__USERNAME}},password=${{secrets.MONSTER_ASPNET__PASSWORD}} `
              -enableRule:AppOffline `
              -enableRule:DoNotDeleteRule `
              -allowUntrusted `
              -retryAttempts:5 `
-             -retryInterval:5000
+             -retryInterval:5000 `
+             -disableLink:AppPoolExtension `
+             -disableLink:ContentExtension `
+             -disableLink:CertificateExtension
+          shell: pwsh
           env:
            MONSTER_ASPNET__PUBLISH_URL: ${{ secrets.MONSTER_ASPNET__PUBLISH_URL }}
            MONSTER_ASPNET__USERNAME: ${{ secrets.MONSTER_ASPNET__USERNAME }}
