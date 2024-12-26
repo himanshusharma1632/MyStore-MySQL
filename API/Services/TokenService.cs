@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using API.Entities;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Services
@@ -22,22 +18,30 @@ namespace API.Services
      }   
 
 //jwt token code - custom token
-public async Task<string> GenerateToken(User user)
+public async Task<string> GenerateToken(User user, IWebHostEnvironment env)
 {
-    var claims = new List<Claim> {
+    List<Claim> claims = [
         new Claim(ClaimTypes.Email, user.Email),
         new Claim(ClaimTypes.Name, user.UserName),
-    };
+    ];
 
 //adding a role
 var roles = await _userManager.GetRolesAsync(user);
 foreach(var role in roles) {
     claims.Add(new Claim(ClaimTypes.Role, role));
 }
-//adding encryption
-var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTSettings:TokenKey"]));
+
+//adding encryption ()
+// configuration - 1 | json-web-token "key-bytes (512bit)" (env=dev | src : appsettings.development.json || env=prod | src : MonsterAspNET env-variables)
+string tokenKeyBytes = env.IsProduction() ? Environment.GetEnvironmentVariable("JWTSETTINGS_TOKENKEY") 
+                                          : _configuration["JWTSettings:TokenKey"];
+
+// generated "symmetric-security key" (dual-handshaking mechanism)
+SymmetricSecurityKey key = new (Encoding.UTF8.GetBytes(tokenKeyBytes)); 
+
 //adding a trusted signature
 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
+
 //creating tokenOptions
 var options = new JwtSecurityToken(
     issuer : null,
@@ -46,8 +50,9 @@ var options = new JwtSecurityToken(
     expires : DateTime.UtcNow.AddDays(7).AddHours(12),
     signingCredentials : creds
 );
-//writing the token
+
+// writing the token
 return new JwtSecurityTokenHandler().WriteToken(options);
-}
     }
+  }
 }
